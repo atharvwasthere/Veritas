@@ -10,7 +10,7 @@
       "destination": "https://veritas-api.onrender.com/api/:path*"
     },
     {
-      "source": "/((?!assets|img|favicon|.*\\..*).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
