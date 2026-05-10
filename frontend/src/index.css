@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&family=Geist+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ink: #111111;
+  --color-canvas: #ffffff;
+  --color-sage: #f3efeb;
+  --color-stone: #e9eaeb;
+  --color-gunmetal: #615e5b;
+  --color-concrete: #d8d3cc;
+  --color-action: #000000;
+  --color-accent: #ff9900;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss02", "ss03";
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.font-mono {
+  font-feature-settings: "ss08";
+}
+
+/* Spinner used by LoadingStepper */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin-ring {
+  animation: spin-slow 0.9s linear infinite;
+}
+
+/* Subtle marquee for the hero illustration on small screens — none yet, kept minimal */
