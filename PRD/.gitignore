@@ -1,0 +1,5 @@
+# Keep only the PM deck in version control. Everything else (design tokens,
+# stock imagery, scratch markdown, third-party API dumps) stays local.
+*
+!.gitignore
+!auditai_pm_deck.md
