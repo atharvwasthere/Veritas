@@ -1,6 +1,8 @@
 import type { AuditReport, StreamEvent } from "@/types/audit";
 
-const BASE = (import.meta.env.VITE_API_BASE_URL || "").replace(/\/$/, "");
+const BASE = (
+  (import.meta as unknown as { env?: Record<string, string> }).env?.VITE_API_BASE_URL || ""
+).replace(/\/$/, "");
 
 export async function runAudit(url: string, signal?: AbortSignal): Promise<AuditReport> {
   const res = await fetch(`${BASE}/api/audit`, {

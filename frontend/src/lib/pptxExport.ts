@@ -126,8 +126,7 @@ function buildScoresSlide(pptx: PptxGenJS, r: AuditReport) {
 
   s.addText("Six audit categories", {
     x: PAD, y: PAD - 0.05, w: SLIDE_W - 2 * PAD, h: 0.5,
-    fontFace: FONT, fontSize: 22, color: INK,
-    fontWeight: 500 as unknown as undefined, bold: false,
+    fontFace: FONT, fontSize: 22, color: INK, bold: true,
   });
 
   const cols = 3;
