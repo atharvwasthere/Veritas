@@ -1,9 +1,9 @@
 import type { AuditReport, StreamEvent } from "@/types/audit";
 
-const BASE = ""; // proxied via vite
+const BASE = (import.meta.env.VITE_API_BASE_URL || "").replace(/\/$/, "");
 
 export async function runAudit(url: string, signal?: AbortSignal): Promise<AuditReport> {
-  const res = await fetch(`${BASE}/audit`, {
+  const res = await fetch(`${BASE}/api/audit`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ url }),
@@ -21,7 +21,7 @@ export async function* streamAudit(
   url: string,
   signal?: AbortSignal
 ): AsyncGenerator<StreamEvent, void, void> {
-  const res = await fetch(`${BASE}/audit/stream`, {
+  const res = await fetch(`${BASE}/api/audit/stream`, {
     method: "POST",
     headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
     body: JSON.stringify({ url }),

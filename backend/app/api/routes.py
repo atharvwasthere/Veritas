@@ -18,7 +18,7 @@ from app.core.logging import get_logger
 from app.models.audit import AuditRequest
 from app.workers import ExtractorEvent
 
-router = APIRouter(prefix="/audit", tags=["audit"])
+router = APIRouter(prefix="/api/audit", tags=["audit"])
 log = get_logger(__name__)
 
 
