@@ -1,4 +1,4 @@
-# AuditAI
+# Veritas
 
 > Pre-seed VC diligence in 3 minutes, not 4 hours.
 
